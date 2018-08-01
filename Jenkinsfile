@@ -6,22 +6,22 @@ stage ('Compile Stage'){
 steps{
 echo 'Building'
 withMaven(maven : 'maven_3.5.3'){
-sh 'maven clean compile'
+sh 'mvn clean compile'
       }
    }
 }
-stage ('Testing Stage'){
+stage ('Test Stage'){
 steps{
 withMaven(maven : 'maven_3.5.3'){
-sh 'maven test'
+sh 'mvn test'
     }
  }
 }
-stage ('Deplotment Stage'){
+stage ('Deplyotment Stage'){
 steps{
 
 withMaven(maven : 'maven_3.5.3'){
-sh 'maven deploy'
+sh 'mvn deploy'
     }
  }
 }
