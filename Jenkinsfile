@@ -5,14 +5,14 @@ stages {
 stage ('Compile Stage'){
 steps{
 echo 'Building'
-withMaven(maven : 'maven_3.5.3'){
+withMaven(maven : 'maven'){
 sh 'mvn clean compile'
       }
    }
 }
 stage ('Test Stage'){
 steps{
-withMaven(maven : 'maven_3.5.3'){
+withMaven(maven : 'maven'){
 sh 'mvn test'
     }
  }
@@ -20,7 +20,7 @@ sh 'mvn test'
 stage ('Deplyotment Stage'){
 steps{
 
-withMaven(maven : 'maven_3.5.3'){
+withMaven(maven : 'maven'){
 sh 'mvn deploy'
     }
  }
